@@ -36,7 +36,7 @@ export default function SplitScreenLayout() {
     rightSize = "60%";
   }
 
-  const transition = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
+  const transition = { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const };
 
   return (
     <>
@@ -54,7 +54,7 @@ export default function SplitScreenLayout() {
         )}
 
         <motion.div
-          className="relative overflow-hidden flex-shrink-0"
+          className="relative overflow-hidden shrink-0"
           initial={false}
           animate={{
             width: isMobile ? "100%" : leftSize,
@@ -80,7 +80,7 @@ export default function SplitScreenLayout() {
         <AnimatePresence>
           {!clickedSide && !isMobile && (
             <motion.div
-              className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-white/10 z-20 pointer-events-none"
+              className="absolute top-0 bottom-0 left-1/2 w-px bg-white/10 z-20 pointer-events-none"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -90,7 +90,7 @@ export default function SplitScreenLayout() {
         </AnimatePresence>
 
         <motion.div
-          className="relative overflow-hidden flex-shrink-0"
+          className="relative overflow-hidden shrink-0"
           initial={false}
           animate={{
             width: isMobile ? "100%" : rightSize,

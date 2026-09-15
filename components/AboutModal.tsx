@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { X, Mail, Github, Linkedin, FileText } from "lucide-react";
+import { X, Mail, GitBranch, BriefcaseBusiness, FileText } from "lucide-react";
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -102,7 +102,7 @@ export default function AboutModal({
                 ? { opacity: 0, scale: 1 }
                 : { opacity: 0, scale: 0.95, y: 10 }
             }
-            transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: [0.16, 1, 0.3, 1] as const }}
             className="relative z-10 w-full max-w-md bg-[#121212] border border-white/10 text-white rounded-2xl p-6 md:p-8 shadow-2xl overflow-hidden"
           >
             {/* Close Button */}
@@ -160,7 +160,7 @@ export default function AboutModal({
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-2 text-xs font-medium bg-white/5 hover:bg-white/15 border border-white/10 rounded-lg transition-colors text-white/80 hover:text-white"
                 >
-                  <Github className="w-3.5 h-3.5" />
+                  <GitBranch className="w-3.5 h-3.5" />
                   <span>GitHub</span>
                 </a>
                 <a
@@ -169,7 +169,7 @@ export default function AboutModal({
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-2 text-xs font-medium bg-white/5 hover:bg-white/15 border border-white/10 rounded-lg transition-colors text-white/80 hover:text-white"
                 >
-                  <Linkedin className="w-3.5 h-3.5" />
+                  <BriefcaseBusiness className="w-3.5 h-3.5" />
                   <span>LinkedIn</span>
                 </a>
                 <a
