@@ -1,15 +1,12 @@
 "use client";
 
 import React, { useRef } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 
-import JitterText from "./JitterText";
 import GlitchDecodeText from "./GlitchDecodeText";
-import FilmGrainOverlay from "./FilmGrainOverlay";
 import BlueprintGrid from "./BlueprintGrid";
-import EditorialJournalSection from "./EditorialJournalSection";
+import HobbyCorkboard from "./HobbyCorkboard";
 import WorkThroughCodeSection from "./WorkThroughCodeSection";
 
 
@@ -156,11 +153,7 @@ export default function HalfPanel({
             }`}
           >
             {isLeft ? (
-              <JitterText
-                text={title}
-                isHovered={isHovered}
-                shouldReduceMotion={shouldReduceMotion}
-              />
+              <span>{title}</span>
             ) : (
               <GlitchDecodeText
                 text={title}
@@ -182,7 +175,7 @@ export default function HalfPanel({
               >
                 {isLeft ? (
                   <div className="w-full text-left pt-6">
-                    <EditorialJournalSection />
+                    <HobbyCorkboard />
                   </div>
                 ) : (
                   <div className="w-full text-left pt-6">

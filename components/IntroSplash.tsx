@@ -95,9 +95,9 @@ export default function IntroSplash({ onComplete }: IntroSplashProps) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 0.6, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-mono text-xs uppercase tracking-[0.3em] text-neutral-400"
+            className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-400"
           >
-            [ CREATIVE DIRECTOR & ENGINEER ]
+            SOFTWARE ENGINEER &amp; CREATIVE EXPLORER
           </motion.div>
 
           {/* Centered Large Editorial Typography (Canva / Editorial Poster Style) */}
@@ -109,7 +109,7 @@ export default function IntroSplash({ onComplete }: IntroSplashProps) {
               transition={{ duration: 1.2, ease: "easeOut" }}
               className="absolute font-serif italic text-7xl md:text-[13rem] tracking-tighter text-white pointer-events-none uppercase whitespace-nowrap select-none font-bold"
             >
-              ABOUT
+              PORTFOLIO
             </motion.span>
 
             {/* Foreground Script Signature Name Overlay */}
@@ -126,9 +126,9 @@ export default function IntroSplash({ onComplete }: IntroSplashProps) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 0.7, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="font-sans text-xs md:text-sm uppercase tracking-[0.25em] text-neutral-300 mt-4 max-w-md z-10 font-light"
+              className="font-sans text-xs md:text-sm uppercase tracking-[0.2em] text-neutral-300 mt-4 max-w-lg z-10 font-light"
             >
-              Architecting Systems &amp; Visual Journeys
+              Building software, making things, and collecting ideas along the way.
             </motion.p>
           </div>
 

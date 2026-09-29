@@ -43,21 +43,7 @@ export default function BlueprintGrid({ isHovered, isClicked }: BlueprintGridPro
         }}
       />
 
-      {/* Blueprint technical coordinate accents */}
-      <div className="absolute top-6 left-6 text-[10px] font-mono text-[#18352A]/50 tracking-widest pointer-events-none select-none">
-        [SYS // 0x1025]
-      </div>
-      <div className="absolute bottom-6 right-6 text-[10px] font-mono text-[#18352A]/50 tracking-widest pointer-events-none select-none">
-        [GRID // IVORY_PINE]
-      </div>
-
-      {/* Subtle crosshair accents at fixed points */}
-      <div className="absolute top-1/4 left-1/4 w-3 h-3 text-[#18352A]/40 flex items-center justify-center font-mono text-xs select-none">
-        +
-      </div>
-      <div className="absolute bottom-1/3 right-1/4 w-3 h-3 text-[#18352A]/40 flex items-center justify-center font-mono text-xs select-none">
-        +
-      </div>
+      {/* Clean Blueprint Grid Pattern */}
     </div>
   );
 }

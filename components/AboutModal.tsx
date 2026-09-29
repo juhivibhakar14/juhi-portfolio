@@ -141,8 +141,8 @@ export default function AboutModal({
 
               {/* Bio Intro */}
               <p className="text-sm leading-relaxed text-neutral-300 mb-6 font-sans">
-                Building high-performance software systems and crafting thoughtful digital
-                experiences. Driven by clean architecture, minimal design aesthetics, and continuous curiosity.
+                Building software, making things, and collecting ideas along the way.
+                Driven by clean code, thoughtful interface design, and quiet curiosity.
               </p>
 
               {/* Quick Links */}

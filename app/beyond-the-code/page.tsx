@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import FilmGrainOverlay from "@/components/FilmGrainOverlay";
-import EditorialJournalSection from "@/components/EditorialJournalSection";
+import HobbyCorkboard from "@/components/HobbyCorkboard";
 
 export default function BeyondTheCodePage() {
   return (
@@ -25,9 +25,9 @@ export default function BeyondTheCodePage() {
         </span>
       </header>
 
-      {/* Main Editorial Section */}
+      {/* Main Hobby Corkboard Section */}
       <main className="flex-1 w-full relative z-10">
-        <EditorialJournalSection />
+        <HobbyCorkboard />
       </main>
     </div>
   );

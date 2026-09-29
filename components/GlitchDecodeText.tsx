@@ -29,7 +29,6 @@ export default function GlitchDecodeText({
 
     isAnimatingRef.current = true;
     const chars = text.split("");
-    const totalChars = chars.length;
     const startTime = performance.now();
     const cycleIntervalMs = 40; // ~40ms cycle rate
     const staggerDelayMs = 28; // ~28ms per character stagger delay
@@ -75,18 +74,33 @@ export default function GlitchDecodeText({
 
   // Initial load decode
   useEffect(() => {
-    const cleanup = startDecode();
+    let cancelled = false;
+    let cleanup: (() => void) | undefined;
+    const rafId = window.requestAnimationFrame(() => {
+      if (cancelled) return;
+      cleanup = startDecode();
+    });
+
     return () => {
-      if (cleanup) cleanup();
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+      cleanup?.();
     };
   }, [startDecode]);
 
   // Re-trigger on hover entering
   useEffect(() => {
-    if (isHovered && !prevHoveredRef.current) {
-      startDecode();
+    if (!isHovered || prevHoveredRef.current) {
+      prevHoveredRef.current = isHovered;
+      return;
     }
+
     prevHoveredRef.current = isHovered;
+    const rafId = window.requestAnimationFrame(startDecode);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+    };
   }, [isHovered, startDecode]);
 
   // Render text word by word or block

@@ -76,14 +76,14 @@ export default function HobbyCorkboard() {
 
       {/* Header section */}
       <div className="text-center max-w-xl mb-12 relative z-10">
-        <span className="font-space uppercase tracking-[0.2em] text-xs text-[#7A7265] font-semibold block mb-2">
-          Pinned Collection
+        <span className="font-space uppercase tracking-[0.2em] text-xs text-[#7A7265] font-medium block mb-2">
+          Personal Notes &amp; Interests
         </span>
         <h2 className="font-fraunces text-3xl md:text-5xl font-normal tracking-tight text-[#1C1A17] mb-3">
-          Loose Pages & Quiet Pursuits
+          Beyond the Code
         </h2>
         <p className="font-caveat text-xl md:text-2xl text-[#575043]">
-          Click any pinned item to step further inside...
+          A few things I enjoy, read, and explore outside of work.
         </p>
       </div>
 

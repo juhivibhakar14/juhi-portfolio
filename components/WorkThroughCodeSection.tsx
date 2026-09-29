@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import FilmGrainOverlay from "./FilmGrainOverlay";
 
@@ -12,67 +11,27 @@ interface WorkProject {
   tech: string[];
 }
 
-const PROFESSIONAL_PROJECTS: WorkProject[] = [
-  {
-    title: "Enterprise Design System & Platform",
-    category: "Full Stack / Architecture",
-    description: "Scalable frontend micro-architecture and design system components built for high-throughput production applications.",
-    tech: ["Next.js", "TypeScript", "TailwindCSS", "Node.js"],
-  },
-  {
-    title: "High-Performance Data Dashboard",
-    category: "Systems & Performance",
-    description: "Real-time stream visualization interface handling multi-region telemetry data with sub-100ms latency.",
-    tech: ["React", "WebSockets", "GraphQL", "PostgreSQL"],
-  },
-];
+const PROFESSIONAL_PROJECTS: WorkProject[] = [];
 
-const PERSONAL_PROJECTS: WorkProject[] = [
-  {
-    title: "Generative Canvas & Shader Playground",
-    category: "Creative Engineering",
-    description: "An experimental interactive web space exploring WebGL fragment shaders and generative math patterns.",
-    tech: ["Three.js", "WebGL", "TypeScript"],
-  },
-  {
-    title: "Minimalist Markdown Knowledge Engine",
-    category: "Open Source Tooling",
-    description: "Local-first note-taking engine with graph visualization and fast full-text vector index.",
-    tech: ["Next.js", "Rust / Wasm", "TailwindCSS"],
-  },
-];
+const PERSONAL_PROJECTS: WorkProject[] = [];
 
 export default function WorkThroughCodeSection() {
-  const shouldReduceMotion = useReducedMotion() ?? false;
-
   return (
     <section className="relative w-full py-20 md:py-32 px-6 md:px-16 bg-[#DDD3C5] text-[#10251D] overflow-hidden selection:bg-[#18352A] selection:text-[#DDD3C5] font-sans border-t border-[#18352A]/15">
       <FilmGrainOverlay />
 
-      {/* Blueprint Grid Subtle Background Overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.2] pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(24, 53, 42, 0.12) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(24, 53, 42, 0.12) 1px, transparent 1px)
-          `,
-          backgroundSize: "40px 40px",
-        }}
-      />
-
       {/* Header */}
       <div className="relative z-10 max-w-6xl mx-auto mb-16 md:mb-24 border-b border-[#18352A]/15 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <span className="font-mono text-xs text-[#18352A] uppercase tracking-[0.25em] block mb-3 font-semibold">
-            [ SYSTEM // WORK &amp; EXPERIMENTS ]
+          <span className="font-mono text-xs text-[#18352A] uppercase tracking-[0.2em] block mb-3 font-medium">
+            Projects &amp; Technical Notes
           </span>
           <h2 className="font-sans font-bold text-4xl md:text-6xl text-[#10251D] tracking-tight leading-none">
             THROUGH THE CODE
           </h2>
         </div>
         <p className="font-sans text-sm text-[#2D4A3E] max-w-sm font-normal leading-relaxed">
-          What I engineer, enterprise platforms I contribute to, and open-source projects I build.
+          Projects I&apos;m building, software engineering explorations, and technical growth.
         </p>
       </div>
 
@@ -81,9 +40,9 @@ export default function WorkThroughCodeSection() {
         {/* 01 - PROFESSIONAL WORK */}
         <div>
           <div className="flex items-center gap-4 mb-8">
-            <span className="font-mono text-xs text-[#18352A] tracking-widest font-semibold">[ 01 ]</span>
-            <h3 className="font-mono text-sm uppercase tracking-[0.2em] text-[#10251D] font-bold">
-              PROFESSIONAL WORK
+            <span className="font-mono text-xs text-[#18352A] tracking-widest font-semibold">01</span>
+            <h3 className="font-mono text-sm uppercase tracking-[0.15em] text-[#10251D] font-bold">
+              Projects &amp; Work
             </h3>
             <div className="h-[1px] flex-1 bg-[#18352A]/15" />
           </div>
@@ -123,9 +82,9 @@ export default function WorkThroughCodeSection() {
         {/* 02 - PERSONAL WORK */}
         <div>
           <div className="flex items-center gap-4 mb-8">
-            <span className="font-mono text-xs text-[#18352A] tracking-widest font-semibold">[ 02 ]</span>
-            <h3 className="font-mono text-sm uppercase tracking-[0.2em] text-[#10251D] font-bold">
-              PERSONAL EXPERIMENTS
+            <span className="font-mono text-xs text-[#18352A] tracking-widest font-semibold">02</span>
+            <h3 className="font-mono text-sm uppercase tracking-[0.15em] text-[#10251D] font-bold">
+              Personal Experiments
             </h3>
             <div className="h-[1px] flex-1 bg-[#18352A]/15" />
           </div>
@@ -165,9 +124,9 @@ export default function WorkThroughCodeSection() {
         {/* 03 - LEARNING JOURNEY */}
         <div>
           <div className="flex items-center gap-4 mb-10">
-            <span className="font-mono text-xs text-[#18352A] tracking-widest font-semibold">[ 03 ]</span>
-            <h3 className="font-mono text-sm uppercase tracking-[0.2em] text-[#10251D] font-bold">
-              LEARNING JOURNEY &amp; EVOLUTION
+            <span className="font-mono text-xs text-[#18352A] tracking-widest font-semibold">03</span>
+            <h3 className="font-mono text-sm uppercase tracking-[0.15em] text-[#10251D] font-bold">
+              Learning Journey
             </h3>
             <div className="h-[1px] flex-1 bg-[#18352A]/15" />
           </div>
