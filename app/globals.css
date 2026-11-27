@@ -6,6 +6,8 @@
   --font-fraunces: var(--font-fraunces);
   --font-caveat: var(--font-caveat);
   --font-space: var(--font-space-grotesk);
+  --font-bodoni: var(--font-bodoni-moda);
+  --font-hanken: var(--font-hanken-grotesk);
 }
 
 .font-fraunces {

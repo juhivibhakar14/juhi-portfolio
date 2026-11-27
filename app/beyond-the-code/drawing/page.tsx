@@ -43,7 +43,7 @@ export default function DrawingPage() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
           <div className="md:col-span-7 relative aspect-[4/5] overflow-hidden rounded-xs border border-[#211D18]/15 bg-[#F8E8B2] shadow-sm">
             <Image
-              src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=1000"
+              src="/images/sketch.jpg"
               alt="Drawing & Sketches"
               fill
               className="object-cover contrast-105"

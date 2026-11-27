@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fraunces, Caveat, Space_Grotesk } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Fraunces,
+  Caveat,
+  Space_Grotesk,
+  Bodoni_Moda,
+  Hanken_Grotesk,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,6 +35,17 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
+const bodoniModa = Bodoni_Moda({
+  variable: "--font-bodoni-moda",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
+
+const hankenGrotesk = Hanken_Grotesk({
+  variable: "--font-hanken-grotesk",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Juhi Vibhakar | Portfolio",
   description: "Personal Portfolio of Juhi Vibhakar",
@@ -36,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${caveat.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${caveat.variable} ${spaceGrotesk.variable} ${bodoniModa.variable} ${hankenGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

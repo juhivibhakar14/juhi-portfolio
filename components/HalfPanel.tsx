@@ -6,7 +6,7 @@ import { ArrowRight, X } from "lucide-react";
 
 import GlitchDecodeText from "./GlitchDecodeText";
 import BlueprintGrid from "./BlueprintGrid";
-import HobbyCorkboard from "./HobbyCorkboard";
+import BeyondTheCode from "./BeyondTheCode";
 import WorkThroughCodeSection from "./WorkThroughCodeSection";
 
 
@@ -60,15 +60,12 @@ export default function HalfPanel({
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`w-full h-full relative ${
-        isClicked ? "cursor-default overflow-y-auto" : "cursor-pointer"
-      } flex flex-col ${
-        isClicked
+      className={`w-full h-full relative ${isClicked ? "cursor-default overflow-y-auto" : "cursor-pointer"
+        } flex flex-col ${isClicked
           ? "items-center justify-start py-20 px-6 md:px-12"
-          : `justify-center ${
-              isLeft ? "items-end pr-8 md:pr-16" : "items-start pl-8 md:pl-16"
-            }`
-      }`}
+          : `justify-center ${isLeft ? "items-end pr-8 md:pr-16" : "items-start pl-8 md:pl-16"
+          }`
+        }`}
     >
 
       {/* Background Visuals */}
@@ -134,34 +131,34 @@ export default function HalfPanel({
             damping: 15,
             mass: 0.1,
           }}
-          className={`flex flex-col ${
-            isClicked
+          className={`flex flex-col ${isClicked
               ? "items-start text-left"
               : isLeft
-              ? "items-end text-right"
-              : "items-start text-left"
-          }`}
+                ? "items-end text-right"
+                : "items-start text-left"
+            }`}
 
         >
           {/* Title with side-specific personality animations */}
-          <motion.h2
-            layout
-            className={`text-4xl md:text-5xl lg:text-7xl leading-tight drop-shadow-sm select-none ${
-              isLeft
-                ? "font-serif italic tracking-wide text-[#211D18]"
-                : "font-sans font-bold tracking-tighter text-[#10251D]"
-            }`}
-          >
-            {isLeft ? (
-              <span>{title}</span>
-            ) : (
-              <GlitchDecodeText
-                text={title}
-                isHovered={isHovered}
-                shouldReduceMotion={shouldReduceMotion}
-              />
-            )}
-          </motion.h2>
+          {(!isClicked || !isLeft) && (
+            <motion.h2
+              layout
+              className={`text-4xl md:text-5xl lg:text-7xl leading-tight drop-shadow-sm select-none ${isLeft
+                  ? "font-serif italic tracking-wide text-[#211D18]"
+                  : "font-sans font-bold tracking-tighter text-[#10251D]"
+                }`}
+            >
+              {isLeft ? (
+                <span>{title}</span>
+              ) : (
+                <GlitchDecodeText
+                  text={title}
+                  isHovered={isHovered}
+                  shouldReduceMotion={shouldReduceMotion}
+                />
+              )}
+            </motion.h2>
+          )}
 
           {/* Expanded Page Content */}
           <AnimatePresence>
@@ -171,11 +168,11 @@ export default function HalfPanel({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="mt-8 text-lg w-full"
+                className={`${isLeft ? "mt-0" : "mt-8"} text-lg w-full`}
               >
                 {isLeft ? (
-                  <div className="w-full text-left pt-6">
-                    <HobbyCorkboard />
+                  <div className="w-full text-left">
+                    <BeyondTheCode />
                   </div>
                 ) : (
                   <div className="w-full text-left pt-6">
@@ -194,13 +191,11 @@ export default function HalfPanel({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
                 transition={{ duration: 0.4, staggerChildren: 0.1 }}
-                className={`mt-6 flex flex-col ${
-                  isLeft ? "items-end" : "items-start"
-                }`}
+                className={`mt-6 flex flex-col ${isLeft ? "items-end" : "items-start"
+                  }`}
               >
-                <div className={`flex gap-2 flex-wrap text-xs uppercase tracking-widest font-medium mb-6 ${
-                  isLeft ? "text-[#B87932]" : "text-[#18352A]"
-                }`}>
+                <div className={`flex gap-2 flex-wrap text-xs uppercase tracking-widest font-medium mb-6 ${isLeft ? "text-[#B87932]" : "text-[#18352A]"
+                  }`}>
                   {tags.map((tag, i) => (
                     <React.Fragment key={tag}>
                       <span>{tag}</span>
@@ -209,9 +204,8 @@ export default function HalfPanel({
                   ))}
                 </div>
 
-                <div className={`flex items-center gap-2 font-semibold text-sm tracking-wide group ${
-                  isLeft ? "text-[#211D18]" : "text-[#10251D]"
-                }`}>
+                <div className={`flex items-center gap-2 font-semibold text-sm tracking-wide group ${isLeft ? "text-[#211D18]" : "text-[#10251D]"
+                  }`}>
                   <span>{isLeft ? "Explore" : "Enter"}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>

@@ -1,37 +1,29 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import FilmGrainOverlay from "@/components/FilmGrainOverlay";
-import HobbyCorkboard from "@/components/HobbyCorkboard";
+import BeyondTheCode from "@/components/BeyondTheCode";
 
 export default function BeyondTheCodePage() {
   return (
-    <div className="min-h-screen bg-[#F3EDE3] text-[#211D18] relative flex flex-col font-sans selection:bg-[#B87932] selection:text-white">
-      <FilmGrainOverlay />
-
-      {/* Header */}
-      <header className="p-6 md:p-10 flex items-center justify-between border-b border-[#211D18]/15 relative z-10">
+    <div className="min-h-screen bg-[#F3EDE3] text-[#10251D] relative flex flex-col font-sans selection:bg-[#18352A] selection:text-[#F3EDE3]">
+      {/* Navigation Header */}
+      <header className="p-6 md:p-10 flex items-center justify-between border-b border-[#18352A]/15 relative z-10 max-w-[1200px] w-full mx-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#B87932] hover:text-[#211D18] transition-colors font-semibold"
+          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#18352A] hover:text-[#10251D] font-semibold transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Home</span>
         </Link>
-        <span className="font-serif italic text-lg text-[#211D18]">
+        <span className="font-sans font-bold text-lg tracking-tight text-[#10251D]">
           Juhi Vibhakar
         </span>
       </header>
 
-      {/* Main Hobby Corkboard Section */}
+      {/* Main Beyond the Code Gallery */}
       <main className="flex-1 w-full relative z-10">
-        <HobbyCorkboard />
+        <BeyondTheCode />
       </main>
     </div>
   );
 }
-
-
-
